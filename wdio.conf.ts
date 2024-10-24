@@ -22,9 +22,27 @@ export const config: WebdriverIO.Config = {
     // The path of the spec files will be resolved relative from the directory of
     // of the config file unless it's absolute.
     //
-    specs: [
-        './test/specs/**/*.js'
-    ],
+    specs: ['test/features/*.feature'],
+
+    cucumberOpts: {
+        require: ['./test/features/steps/steps.js'],
+        requireModule: ['@babel/register'],
+        backtrace: false,
+        compiler: [],
+        dryRun: false,
+        failFast: false,
+        format: ['pretty'],
+        colors: true,
+        snippets: true,
+        source: true,
+        profile: [],
+        strict: false,
+        tags: [],
+        timeout: 50000,
+        ignoreUndefinedDefinitions: false,
+        tagExpression: 'not @skip',
+    },
+
     // Patterns to exclude.
     exclude: [
         // 'path/to/excluded/files'
@@ -57,7 +75,7 @@ export const config: WebdriverIO.Config = {
         'appium:device-name': 'Medium Phone API 35',
         'appium:platformVersion': '15',
         'appium:automationName': 'UiAutomator2',
-        'appium:app': '/path/to/apk/application.apk', // Path to the React Native APK
+        'appium:app': 'apk/application.apk', // Path to the React Native APK
         'appium:noReset': true,
     }],
 
@@ -116,7 +134,7 @@ export const config: WebdriverIO.Config = {
     //
     // Make sure you have the wdio adapter package for the specific framework installed
     // before running any tests.
-    framework: 'mocha',
+    framework: 'cucumber',
     
     //
     // The number of times to retry the entire specfile when it fails as a whole
