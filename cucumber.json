@@ -1,0 +1,27 @@
+{
+
+    "default": {
+        "paths": [
+            "tests/features/"
+        ],
+
+        "require": [
+            "tests/playwright_steps/steps.js"
+        ],
+
+        "formatOptions": {
+            "snipptInterface": "async-await"
+
+        },
+
+        "format": [
+            [
+                "html",
+                "cucumber-report.html"
+            ],
+            "summary",
+            "progress-bar",
+            "json:./cucumber-report.json"
+        ]
+    }
+}

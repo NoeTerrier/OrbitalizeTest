@@ -29,7 +29,7 @@ This is an [Expo](https://expo.dev) project created with [`create-expo-app`](htt
 3. Initialize WebdriverIO configuration:
 `npx wdio config`
    - On my local machine
-   - Mocha
+   - Cucumber
    - No compiler
    - Spect Location: Default
    - Do you want WebDriverIO to generate some test files?: No
@@ -74,4 +74,15 @@ It is important for the testID and accessibilityLabel to be set for appium to fi
 
 ## Run the test
 
+export ANDROID_HOME=~/Library/Android/sdk
+export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/tools/bin:$ANDROID_HOME/platform-tools
+
 Run the emulator and execute `npx wdio`.
+
+## Playwright testing
+
+Install cucumber
+`npm i @cucumber/cucumber`
+
+Install playwright
+`npm init playwright@latest`

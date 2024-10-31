@@ -1,0 +1,119 @@
+[
+  {
+    "description": "  Everybody could change text by pressing the button",
+    "elements": [
+      {
+        "description": "",
+        "id": "can-change-text;app-start",
+        "keyword": "Scenario",
+        "line": 4,
+        "name": "App start",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 123207
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 5,
+            "name": "app is started",
+            "match": {
+              "location": "tests/appium_steps/steps.js:3"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2163116872
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 6,
+            "name": "label should be \"Hello world!\"",
+            "match": {
+              "location": "tests/appium_steps/steps.js:16"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 49094664
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 157667
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "can-change-text;change-label-text",
+        "keyword": "Scenario",
+        "line": 8,
+        "name": "Change label text",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 48375
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 9,
+            "name": "I press the button",
+            "match": {
+              "location": "tests/appium_steps/steps.js:9"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 77231289
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 10,
+            "name": "label should be \"Text changed!\"",
+            "match": {
+              "location": "tests/appium_steps/steps.js:16"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1830785332
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 104624
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      }
+    ],
+    "id": "can-change-text",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "Can change text",
+    "tags": [],
+    "uri": "tests/features/changetext.feature"
+  }
+]
