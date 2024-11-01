@@ -7,9 +7,10 @@
         "ios": "react-native run-ios",
         "lint": "eslint .",
         "start": "react-native start",
-        "test:android": "wdio run wdio-android.conf.js",
-        "test:ios": "wdio run wdio-ios.conf.js",
-        "test:web": "cucumber-js test"
+        "test:android": "wdio run ./config/wdio-android.conf.js",
+        "test:ios": "wdio run ./config/wdio-ios.conf.js",
+        "test:web": "cucumber-js test --config ./config/cucumber.json",
+        "wdio": "wdio run ./wdio.conf.js"
     },
     "dependencies": {
         "react": "18.3.1",

@@ -22,7 +22,7 @@ exports.config = {
     // of the config file unless it's absolute.
     //
     specs: [
-        'tests/features/*.feature'
+        '../tests/features/common/*.feature'
     ],
     // Patterns to exclude.
     exclude: [
@@ -51,13 +51,13 @@ exports.config = {
     // https://saucelabs.com/platform/platform-configurator
     //
 
-    // android testing
+    // iOS testing
     capabilities: [{
         // capabilities for local Appium web tests on an Android Emulator
-        platformName: 'Android',
-        'appium:deviceName': 'Medium Phone API 35',
-        'appium:platformVersion': '15',
-        'appium:automationName': 'UiAutomator2',
+        platformName: 'iOS',
+        'appium:deviceName': 'iPhone 13',
+        'appium:platformVersion': '18.1',
+        'appium:automationName': 'XCUITest',
         'appium:appPackage': 'com.orbitalizetest',
         'appium:appActivity': 'com.orbitalizetest.MainActivity',
         'appium:noReset': false,

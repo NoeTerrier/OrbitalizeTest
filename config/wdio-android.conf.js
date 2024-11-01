@@ -22,7 +22,7 @@ exports.config = {
     // of the config file unless it's absolute.
     //
     specs: [
-        '../tests/features/*.feature'
+        '../tests/features/common/*.feature'
     ],
     // Patterns to exclude.
     exclude: [
@@ -51,13 +51,13 @@ exports.config = {
     // https://saucelabs.com/platform/platform-configurator
     //
 
-    // iOS testing
+    // android testing
     capabilities: [{
         // capabilities for local Appium web tests on an Android Emulator
-        platformName: 'iOS',
-        'appium:deviceName': 'iPhone 13',
-        'appium:platformVersion': '18.1',
-        'appium:automationName': 'XCUITest',
+        platformName: 'Android',
+        'appium:deviceName': 'Medium Phone API 35',
+        'appium:platformVersion': '15',
+        'appium:automationName': 'UiAutomator2',
         'appium:appPackage': 'com.orbitalizetest',
         'appium:appActivity': 'com.orbitalizetest.MainActivity',
         'appium:noReset': false,
@@ -138,7 +138,7 @@ exports.config = {
     // If you are using Cucumber you need to specify the location of your step definitions.
     cucumberOpts: {
         // <string[]> (file/dir) require files before executing features
-        require: ['../tests/appium_steps/*.js'],
+        require: ['tests/appium_steps/*.js'],
         // <boolean> show full backtrace for errors
         backtrace: false,
         // <string[]> ("extension:module") require files with the given EXTENSION after requiring MODULE (repeatable)
