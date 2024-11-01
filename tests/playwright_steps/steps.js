@@ -20,6 +20,10 @@ Before(async function () {
 
 });
 
+After(async function () {
+    await browser.close();
+})
+
 Given('app is started', async function () {
     await page.getByTestId('labelTest');
 })
@@ -34,8 +38,11 @@ Then('label should be {string}', async function (expectedResponse) {
     expect(labelText).toEqual(expectedResponse);
 });
 
-After(async function () {
+Then('input should be {string}', async function (string) {
+    var input = await page.getByRole('textbox').inputValue();
+    expect(input).toEqual(string);
+});
 
-    await browser.close();
-
-})
+When('I write {string}', async function (string) {
+    await page.getByRole('textbox').fill(string);
+});

@@ -13,7 +13,9 @@ function App() {
     <div className="App">
       <header className="App-header">
       <p data-testid='labelTest'>{text}</p>
-      <button onClick={handleChangeText} title='Button to test' data-testid='testButton'>CLIC HERE</button>
+      <button onClick={handleChangeText} title='Button to test' data-testid='testButton'>CLICK HERE</button>
+
+      <input data-testid='inputField'></input>
       </header>
     </div>
   );

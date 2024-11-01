@@ -2,11 +2,12 @@
 
     "default": {
         "paths": [
-            "tests/features/"
+            "./tests/features/common"
+            
         ],
 
         "require": [
-            "tests/playwright_steps/steps.js"
+            "./tests/playwright_steps/steps.js"
         ],
 
         "formatOptions": {
