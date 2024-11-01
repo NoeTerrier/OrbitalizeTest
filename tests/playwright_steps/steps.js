@@ -16,21 +16,21 @@ Before(async function () {
 
     page = await context.newPage();
 
-    page.goto("http://localhost:8081/");
+    page.goto("http://localhost:3000/");
 
 });
 
 Given('app is started', async function () {
-    await page.getByLabel('labelTest');
+    await page.getByTestId('labelTest');
 })
 
 When('I press the button', async function () {
     // Click the button
-    await page.getByLabel('Test Button').click();
+    await page.getByTestId('testButton').click();
 });
 
 Then('label should be {string}', async function (expectedResponse) {
-    var labelText = await page.getByLabel('labelTest').textContent();
+    var labelText = await page.getByTestId('labelTest').textContent();
     expect(labelText).toEqual(expectedResponse);
 });
 

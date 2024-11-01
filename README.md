@@ -1,32 +1,17 @@
-# Welcome to your Expo app 👋
+# Install dependencies
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
-
-## Get started
-
-1. Install dependencies
-
-   ```bash
-   npm install
-   ```
-
-2. Start the app
-
-   ```bash
-    npx expo start
-   ```
+```bash
+npm install
+```
 
 ## Appium
 
 ### Installation
 
-1. Install appium:  
-`npm install -g appium`
-
-2. Install WebdriverIO, used to convert tests into http request to appium:  
+1. Install WebdriverIO, used to convert tests into http request to appium:  
 `npm install @wdio/cli --save-dev`
 
-3. Initialize WebdriverIO configuration:
+2. Initialize WebdriverIO configuration:
 `npx wdio config`
    - On my local machine
    - Cucumber
@@ -39,50 +24,67 @@ This is an [Expo](https://expo.dev) project created with [`create-expo-app`](htt
    - Base URL: Default
    - NPM Install: Yes
 
+This will generate a `wdio.conf.js` file that is the base template for `wdio-<platform>.conf.j`, so you can delete it.
 
-4. Install dependencies:  
-`npm install @wdio/appium-service webdriverio chai`
+Also install appium server by continuing inside the appium installation.
 
-5. Create a ADV emulator with android studio.
+3. Install appium driver dependencies for android and iOS:  
+`appium driver install uiautomator2`
+`appium driver install xcuitest`
+
+4. Create a ADV emulator with android studio.
+5. Create a iOS emulator with XCode
 
 ### Set config and write test
 
+2. Edit `wdio-<plateform>.conf.js` with capabilities. Replace name and version with the good values.
 
-1. Build the apk of the app (using eas for example `npx eas build --platform android --local`) 
-
-2. Edit `wdio.conf.js` with capabilities. Replace name and version with the good values.
-
+Example for Android
 ``` typescript
 ...
 capabilities: [{
    // capabilities for local Appium web tests on an Android Emulator
    platformName: 'Android',
-   'appium:device-name': 'Medium Phone API 35',
+   'appium:deviceName': 'Medium Phone API 35',
    'appium:platformVersion': '15',
    'appium:automationName': 'UiAutomator2',
-   'appium:app': '/path/to/apk/application.apk', // Path to the React Native APK
-   'appium:noReset': true,
+   'appium:appPackage': 'com.orbitalizetest',
+   'appium:appActivity': 'com.orbitalizetest.MainActivity',
+   'appium:noReset': false,
 }],
 ...
 ```
 
-3. Create the test file `test/specs/button.e2e.js`.
+The steps for convert Gherkin to js tests are in `tests/appium_steps`.
 
 It is important for the testID and accessibilityLabel to be set for appium to find the item, or Appium Inspector to naviguate in the app. The inspector is useful to see the hierarchy of the app.
 
 ![alt text](image.png)
 
-## Run the test
+## Playwright
 
+`orbitalize-test-web` is an react app with the same structure than the react-native app. 
+
+You need to install the dependencies `npm install`. You can then start the app using `npm start`.
+
+The config of playwright is done inside `playwright.config.ts` and the one of cucumber in `cucumber.json`.
+
+## Run the tests
+
+### Android testing
+You may need to export your path to the android SDK
+
+```bash
 export ANDROID_HOME=~/Library/Android/sdk
 export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/tools/bin:$ANDROID_HOME/platform-tools
+```
 
-Run the emulator and execute `npx wdio`.
+Run the emulator using `npm run android` and execute `npm run test:android`.
 
-## Playwright testing
+### iOS testing
+Run the emulator using `npm run ios` and execute `npm run test:ios`.
 
-Install cucumber
-`npm i @cucumber/cucumber`
+### Web testing
+Run the web app by runing `npm start` inside the `orbitalize-test-web` folder.
 
-Install playwright
-`npm init playwright@latest`
+Then, run `npm run test:web` in the root folder to run the tests.

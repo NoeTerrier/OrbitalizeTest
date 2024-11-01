@@ -14,7 +14,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 123207
+              "duration": 130666
             }
           },
           {
@@ -27,7 +27,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 2163116872
+              "duration": 2054786542
             }
           },
           {
@@ -36,11 +36,11 @@
             "line": 6,
             "name": "label should be \"Hello world!\"",
             "match": {
-              "location": "tests/appium_steps/steps.js:16"
+              "location": "tests/appium_steps/steps.js:17"
             },
             "result": {
               "status": "passed",
-              "duration": 49094664
+              "duration": 14803748
             }
           },
           {
@@ -48,7 +48,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 157667
+              "duration": 169667
             }
           }
         ],
@@ -67,7 +67,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 48375
+              "duration": 51208
             }
           },
           {
@@ -80,7 +80,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 77231289
+              "duration": 65807165
             }
           },
           {
@@ -89,11 +89,11 @@
             "line": 10,
             "name": "label should be \"Text changed!\"",
             "match": {
-              "location": "tests/appium_steps/steps.js:16"
+              "location": "tests/appium_steps/steps.js:17"
             },
             "result": {
               "status": "passed",
-              "duration": 1830785332
+              "duration": 20947413
             }
           },
           {
@@ -101,7 +101,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 104624
+              "duration": 28874
             }
           }
         ],
